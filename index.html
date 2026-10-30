@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRINCE MATH — Apprendre, comprendre, créer</title>
+<style>
+:root{--navy:#10243a;--blue:#1769aa;--gold:#f0b429;--paper:#f4f7fb;--ink:#203044;--white:#fff;--green:#18794e}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--paper);color:var(--ink);line-height:1.65}
+header{background:linear-gradient(120deg,#10243a,#1769aa);color:white;padding:28px 7% 24px}
+header h1{margin:0;font-size:clamp(2rem,5vw,3.3rem);letter-spacing:2px}header p{margin:6px 0 0;color:#e6f2ff}
+nav{display:flex;flex-wrap:wrap;gap:8px;padding:12px 7%;background:#0b1b2b;position:sticky;top:0;z-index:5}
+button,.navbtn{border:0;border-radius:8px;padding:10px 14px;background:#e8f1fa;color:#10243a;font-weight:bold;cursor:pointer}
+nav button{background:transparent;color:white}nav button:hover,nav button.active{background:var(--gold);color:#10243a}
+main{max-width:1120px;margin:26px auto;padding:0 18px}.page{display:none}.page.active{display:block}
+.hero,.card,.lesson,.quote{background:white;border-radius:14px;padding:22px;margin:14px 0;box-shadow:0 3px 14px #10243a12}
+.hero{border-left:6px solid var(--gold)}h2{color:#123d63;margin-top:0}h3{color:#1769aa;margin-bottom:6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.card h3{margin-top:0}.tag{display:inline-block;background:#e8f1fa;padding:3px 9px;border-radius:20px;font-size:.85rem}
+.subject-btn{width:100%;text-align:left;background:#eaf3fb;margin-top:8px}
+.lesson{border-left:4px solid #1769aa}.formula{background:#eef5fb;padding:12px;border-radius:8px;font-family:Georgia,serif;font-size:1.05rem}
+.example{background:#f1f8f3;border-left:4px solid var(--green);padding:12px;border-radius:8px}
+.tip{background:#fff8e6;border-left:4px solid var(--gold);padding:12px;border-radius:8px}
+ul{padding-left:22px}li{margin:5px 0}.muted{color:#63758a}
+footer{text-align:center;background:#10243a;color:white;padding:22px;margin-top:35px}
+input{padding:10px;border:1px solid #b8c7d6;border-radius:7px;max-width:100%}
+.check{background:var(--blue);color:white;margin-left:5px}.result{font-weight:bold;margin-left:8px}
+.small{font-size:.92rem}
+@media(max-width:600px){nav{position:static;padding:10px 4%}nav button{padding:9px}.hero,.card,.lesson{padding:16px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>PRINCE MATH</h1>
+  <p>APPRENDRE • COMPRENDRE • PRATIQUER • RÉUSSIR</p>
+  <p>La connaissance au service de l'avenir.</p>
+</header>
+<nav>
+  <button class="active" onclick="showPage('accueil',this)">Accueil</button>
+  <button onclick="showPage('cours',this)">Cours</button>
+  <button onclick="showPage('exercices',this)">Exercices</button>
+  <button onclick="showPage('conseils',this)">Conseils</button>
+  <button onclick="showPage('philosophie',this)">Mes philosophies</button>
+  <button onclick="showPage('apropos',this)">À propos</button>
+</nav>
+<main>
+<section id="accueil" class="page active">
+ <div class="hero">
+  <h2>Bienvenue dans PRINCE MATH</h2>
+  <p>Un espace pour apprendre les sciences, développer son raisonnement et cultiver l'esprit de création.</p>
+  <p><strong>Notre méthode :</strong> comprendre une notion, observer un exemple, pratiquer avec des exercices, puis vérifier ses acquis.</p>
+ </div>
+ <div class="grid">
+  <div class="card"><h3>Mathématiques</h3><p>Logique, algèbre, analyse, géométrie et trigonométrie.</p><button class="subject-btn" onclick="showPage('cours')">Explorer les cours ?</button></div>
+  <div class="card"><h3>Physique générale</h3><p>Grandeurs, unités, mouvement, forces et électricité.</p><button class="subject-btn" onclick="showPage('cours')">Explorer les cours ?</button></div>
+  <div class="card"><h3>Chimie</h3><p>Atomes, molécules, réactions et quantités de matière.</p><button class="subject-btn" onclick="showPage('cours')">Explorer les cours ?</button></div>
+  <div class="card"><h3>Informatique</h3><p>Ordinateur, algorithmique, logique et programmation web.</p><button class="subject-btn" onclick="showPage('cours')">Explorer les cours ?</button></div>
+ </div>
+ <div class="tip"><strong>Conseil :</strong> ne cherche pas seulement à retenir une formule. Demande-toi toujours ce qu'elle signifie, quand l'utiliser et pourquoi elle fonctionne.</div>
+</section>
+
+<section id="cours" class="page">
+ <div class="hero"><h2>Bibliothèque des cours</h2><p>Choisis une matière. Ces leçons constituent une base de révision : complète-les avec les explications et le syllabus de tes professeurs.</p></div>
+ <div class="grid">
+  <div class="card"><h3>Mathématiques</h3>
+   <h4>1. Algèbre linéaire</h4>
+   <p><strong>Scalaire :</strong> nombre utilisé pour multiplier une quantité ou un vecteur.</p>
+   <p><strong>Vecteur :</strong> objet mathématique caractérisé notamment par une direction, un sens et une norme dans le plan ou l'espace.</p>
+   <p><strong>Matrice :</strong> tableau rectangulaire de nombres rangés en lignes et colonnes.</p>
+   <div class="formula">A + B = (a?? + b??)</div>
+   <p>L'addition de deux matrices est possible lorsqu'elles ont le même nombre de lignes et de colonnes. On additionne les éléments de même position.</p>
+   <div class="example"><strong>Exemple :</strong><br>A = [[1, 2], [3, 4]] et B = [[5, 1], [2, 3]]<br>A + B = [[6, 3], [5, 7]].</div>
+   <h4>2. Analyse mathématique : limites</h4>
+   <p>La limite décrit la valeur vers laquelle une fonction tend lorsque la variable se rapproche d'un nombre ou devient très grande.</p>
+   <div class="formula">lim (x ? a) f(x) = L</div>
+   <p>On dit que la limite de f(x), lorsque x tend vers a, est L si les valeurs de f(x) se rapprochent de L lorsque x se rapproche de a.</p>
+   <div class="example"><strong>Exemple :</strong> lim (x ? 2) (3x + 1) = 3(2) + 1 = 7.</div>
+   <h4>3. Dérivation</h4>
+   <p>La dérivée mesure le taux de variation instantané d'une fonction. Géométriquement, elle donne la pente de la tangente à la courbe en un point.</p>
+   <div class="formula">(xn)' = n·xn?¹ ; (sin x)' = cos x ; (cos x)' = -sin x</div>
+   <div class="example"><strong>Exemple :</strong> si f(x) = x² + 3x, alors f'(x) = 2x + 3.</div>
+   <h4>4. Intégration</h4>
+   <p>Une primitive F de f vérifie F'(x) = f(x). L'intégrale définie représente notamment une accumulation et, sous certaines conditions, une aire algébrique.</p>
+   <div class="formula">? xn dx = xn?¹/(n+1) + C, pour n ? -1</div>
+   <div class="example"><strong>Exemple :</strong> ? 2x dx = x² + C.</div>
+   <h4>5. Trigonométrie</h4>
+   <p>Dans un triangle rectangle : sinus = côté opposé / hypoténuse ; cosinus = côté adjacent / hypoténuse ; tangente = côté opposé / côté adjacent.</p>
+   <div class="formula">sin²(x) + cos²(x) = 1</div>
+   <h4>6. Géométrie analytique</h4>
+   <p>Dans un repère, la distance entre A(x1,y1) et B(x2,y2) est :</p>
+   <div class="formula">AB = v[(x2 - x1)² + (y2 - y1)²]</div>
+  </div>
+  <div class="card"><h3>Physique générale</h3>
+   <h4>1. Grandeurs et unités</h4>
+   <p>Une grandeur physique est une propriété que l'on peut mesurer. On exprime une mesure par une valeur numérique et une unité.</p>
+   <p>Exemples : longueur en mètre (m), masse en kilogramme (kg), durée en seconde (s), intensité électrique en ampère (A).</p>
+   <h4>2. Vitesse moyenne</h4>
+   <div class="formula">v = d / t</div>
+   <p>La vitesse moyenne est la distance parcourue divisée par la durée du trajet. En unités SI, elle s'exprime en m/s.</p>
+   <div class="example"><strong>Exemple :</strong> un mobile parcourt 100 m en 20 s. Sa vitesse moyenne est 100/20 = 5 m/s.</div>
+   <h4>3. Accélération</h4>
+   <div class="formula">a = (v2 - v1) / (t2 - t1)</div>
+   <p>L'accélération moyenne mesure la variation de vitesse par unité de temps. Son unité SI est le m/s².</p>
+   <h4>4. Force et poids</h4>
+   <p>Une force peut modifier le mouvement ou déformer un objet. Son unité est le newton (N).</p>
+   <div class="formula">P = m × g</div>
+   <p>Le poids P est la force gravitationnelle exercée sur une masse m. Près de la surface terrestre, g vaut approximativement 9,8 N/kg.</p>
+   <h4>5. Loi d'Ohm</h4>
+   <div class="formula">U = R × I</div>
+   <p>Pour un conducteur ohmique à température constante, la tension U est égale à la résistance R multipliée par l'intensité I. Unités : volt, ohm et ampère.</p>
+  </div>
+  <div class="card"><h3>Chimie</h3>
+   <h4>1. Atome et molécule</h4>
+   <p>Un atome est une unité de base d'un élément chimique. Une molécule est un assemblage d'atomes liés entre eux.</p>
+   <p>L'atome contient un noyau (protons et neutrons) autour duquel se trouvent des électrons.</p>
+   <h4>2. Élément et symbole</h4>
+   <p>Chaque élément chimique est identifié par un symbole : H pour hydrogène, O pour oxygène, C pour carbone, Na pour sodium.</p>
+   <h4>3. Réaction chimique</h4>
+   <p>Une réaction chimique transforme des réactifs en produits. Les atomes sont réorganisés : ils ne sont ni créés ni détruits dans une réaction ordinaire.</p>
+   <div class="formula">2 H2 + O2 ? 2 H2O</div>
+   <p>Cette équation équilibrée indique que deux molécules de dihydrogène réagissent avec une molécule de dioxygène pour former deux molécules d'eau.</p>
+   <h4>4. Quantité de matière</h4>
+   <div class="formula">n = m / M</div>
+   <p>n est la quantité de matière en mole, m la masse en grammes et M la masse molaire en g/mol.</p>
+   <div class="example"><strong>Exemple :</strong> pour 18 g d'eau et M(H2O) = 18 g/mol, n = 18/18 = 1 mol.</div>
+   <h4>5. Acides et bases</h4>
+   <p>En solution aqueuse, le pH permet de caractériser l'acidité ou la basicité : pH inférieur à 7, solution acide ; pH égal à 7, neutre ; pH supérieur à 7, basique, à 25 °C dans les conditions usuelles.</p>
+  </div>
+  <div class="card"><h3>Informatique</h3>
+   <h4>1. L'ordinateur</h4>
+   <p>Un ordinateur est une machine électronique qui reçoit des données, les traite selon des instructions, les stocke et produit des résultats.</p>
+   <p><strong>Matériel :</strong> parties physiques (écran, clavier, processeur, mémoire). <strong>Logiciel :</strong> programmes et systèmes qui permettent d'utiliser l'ordinateur.</p>
+   <h4>2. Algorithme</h4>
+   <p>Un algorithme est une suite finie et ordonnée d'instructions permettant de résoudre un problème.</p>
+   <div class="example"><strong>Exemple — addition :</strong><br>Début<br>Lire A et B<br>S ? A + B<br>Afficher S<br>Fin</div>
+   <h4>3. Variables</h4>
+   <p>Une variable est un espace nommé qui contient une valeur susceptible de changer pendant l'exécution d'un programme.</p>
+   <h4>4. Conditions</h4>
+   <p>Une condition permet de choisir une action selon qu'une expression est vraie ou fausse.</p>
+   <div class="example">Si note = 10 alors afficher « Réussi » ; sinon afficher « À retravailler ».</div>
+   <h4>5. HTML, CSS et JavaScript</h4>
+   <p><strong>HTML</strong> structure une page web ; <strong>CSS</strong> définit son apparence ; <strong>JavaScript</strong> ajoute des interactions.</p>
+  </div>
+ </div>
+ <div class="tip"><strong>Important :</strong> les cours ci-dessus sont des fiches de base. Les chapitres de ton syllabus (algèbre linéaire, analyse, géométries, chimie, physique, informatique, etc.) doivent être développés un par un pour obtenir un cours complet et conforme à ton professeur.</div>
+</section>
+
+<section id="exercices" class="page">
+ <div class="hero"><h2>Exercices interactifs</h2><p>Essaie d'abord de résoudre chaque question sans regarder la correction.</p></div>
+ <div class="lesson"><h3>Exercice 1 — Matrices</h3><p>Si A = [[1,2],[3,4]] et B = [[2,1],[0,5]], quelle est la valeur en première ligne, première colonne de A + B ?</p><input id="q1" placeholder="Ta réponse"><button class="check" onclick="check('q1','3','r1')">Vérifier</button><span id="r1" class="result"></span></div>
+ <div class="lesson"><h3>Exercice 2 — Physique</h3><p>Un véhicule parcourt 150 mètres en 30 secondes. Quelle est sa vitesse moyenne en m/s ?</p><input id="q2" placeholder="Ta réponse"><button class="check" onclick="check('q2','5','r2')">Vérifier</button><span id="r2" class="result"></span></div>
+ <div class="lesson"><h3>Exercice 3 — Chimie</h3><p>Combien de moles correspondent à 36 g d'eau si sa masse molaire est 18 g/mol ?</p><input id="q3" placeholder="Ta réponse"><button class="check" onclick="check('q3','2','r3')">Vérifier</button><span id="r3" class="result"></span></div>
+ <div class="lesson"><h3>Exercice 4 — Informatique</h3><p>Quel langage sert principalement à structurer le contenu d'une page web : HTML, CSS ou JavaScript ?</p><input id="q4" placeholder="Ta réponse"><button class="check" onclick="check('q4','html','r4')">Vérifier</button><span id="r4" class="result"></span></div>
+</section>
+
+<section id="conseils" class="page">
+ <div class="hero"><h2>Conseils pour réussir dans les études et dans la vie</h2><p>La réussite se construit par des habitudes régulières, de la réflexion et de la persévérance.</p></div>
+ <div class="grid">
+  <div class="card"><h3>1. Comprendre avant de mémoriser</h3><p>Ne récite pas mécaniquement. Explique la notion avec tes propres mots et cherche un exemple.</p></div>
+  <div class="card"><h3>2. Travailler régulièrement</h3><p>Une petite séance concentrée chaque jour est souvent plus efficace qu'une longue révision à la dernière minute.</p></div>
+  <div class="card"><h3>3. Résoudre des exercices</h3><p>La théorie donne les outils ; les exercices apprennent à les utiliser. Commence simplement puis augmente la difficulté.</p></div>
+  <div class="card"><h3>4. Poser des questions</h3><p>Une question précise aide à découvrir ce qui n'est pas encore compris. Ne confonds pas questionner et manquer d'intelligence.</p></div>
+  <div class="card"><h3>5. Apprendre de ses erreurs</h3><p>Repère l'étape incorrecte, comprends pourquoi elle est fausse, puis refais l'exercice sans regarder la solution.</p></div>
+  <div class="card"><h3>6. Organiser son temps</h3><p>Prévois des objectifs réalistes, des pauses et un moment de sommeil suffisant. Protège tes heures de concentration.</p></div>
+  <div class="card"><h3>7. Écouter activement</h3><p>En classe, note les définitions, les formules, les exemples et les questions à revoir après le cours.</p></div>
+  <div class="card"><h3>8. Développer son français</h3><p>Lis régulièrement, apprends quelques mots nouveaux et entraîne-toi à expliquer clairement tes idées.</p></div>
+  <div class="card"><h3>9. Cultiver la curiosité</h3><p>Demande-toi comment les choses fonctionnent. Observe, compare, expérimente prudemment et vérifie les informations.</p></div>
+  <div class="card"><h3>10. Penser avec méthode</h3><p>Définis le problème, rassemble les données, propose une démarche, vérifie le résultat et tire une conclusion.</p></div>
+  <div class="card"><h3>11. Respecter les autres</h3><p>La compétence n'excuse ni l'arrogance ni le mépris. Écoute, coopère et reconnais ce que tu peux apprendre des autres.</p></div>
+  <div class="card"><h3>12. Prendre soin de soi</h3><p>Le repos, l'alimentation, l'activité physique raisonnable et les relations de confiance soutiennent l'apprentissage.</p></div>
+  <div class="card"><h3>13. Être patient</h3><p>Une difficulté ne prouve pas que tu es incapable. Découpe-la en petites étapes et avance progressivement.</p></div>
+  <div class="card"><h3>14. Être honnête</h3><p>Reconnais ce que tu sais et ce que tu ignores. Cite tes sources et ne présente pas le travail d'autrui comme le tien.</p></div>
+  <div class="card"><h3>15. Transformer les idées en projets</h3><p>Commence par une petite version réalisable, teste-la, demande un avis et améliore-la.</p></div>
+  <div class="card"><h3>16. Garder un équilibre</h3><p>Les études sont importantes, mais la famille, les amitiés, les valeurs, la santé et le repos comptent aussi.</p></div>
+ </div>
+</section>
+
+<section id="philosophie" class="page">
+ <div class="hero"><h2>Mes philosophies</h2><p>Des principes qui orientent l'apprentissage, la réflexion et la manière d'agir.</p></div>
+ <div class="quote"><h3>01 — Apprendre pour comprendre</h3><p>« Apprendre pour comprendre, comprendre pour créer, créer pour transformer. »</p></div>
+ <div class="quote"><h3>02 — La connaissance</h3><p>« La connaissance ne se limite pas à apprendre : elle consiste aussi à comprendre, réfléchir et créer. »</p></div>
+ <div class="quote"><h3>03 — La discipline</h3><p>« Le talent ouvre une porte, mais la discipline aide à avancer chaque jour. »</p></div>
+ <div class="quote"><h3>04 — L'intelligence</h3><p>« Être intelligent, ce n'est pas tout savoir ; c'est savoir réfléchir, chercher, apprendre et reconnaître ses limites. »</p></div>
+ <div class="quote"><h3>05 — La création</h3><p>« Ne sois pas seulement un consommateur de connaissances : deviens aussi un créateur de solutions. »</p></div>
+ <div class="quote"><h3>06 — L'erreur</h3><p>« Une erreur comprise devient une leçon ; une leçon appliquée devient un progrès. »</p></div>
+ <div class="quote"><h3>07 — L'avenir</h3><p>« Construire son avenir commence par la qualité des efforts que l'on fournit aujourd'hui. »</p></div>
+ <div class="quote"><h3>08 — La réflexion</h3><p>« Avant de conclure, observe les faits ; avant d'agir, réfléchis aux conséquences. »</p></div>
+ <div class="quote"><h3>09 — La science</h3><p>« La science avance grâce à la curiosité, à la preuve et à la remise en question. »</p></div>
+ <div class="quote"><h3>10 — La vision</h3><p>« Une vision donne une direction ; un plan donne une méthode ; l'action donne un résultat. »</p></div>
+ <div class="tip"><strong>Devise de PRINCE MATH :</strong> APPRENDRE • COMPRENDRE • PRATIQUER • RÉUSSIR.</div>
+ <p class="muted small">Tu peux remplacer ou compléter ces pensées par tes propres phrases dans le fichier HTML.</p>
+</section>
+
+<section id="apropos" class="page">
+ <div class="hero"><h2>À propos de PRINCE MATH</h2><p>PRINCE MATH est un projet éducatif consacré aux sciences, à la pensée logique, à la créativité et au développement personnel.</p></div>
+ <div class="card"><h3>Notre vision</h3><p>Rendre les connaissances plus accessibles et encourager chacun à devenir autonome dans son apprentissage.</p><h3>Nos valeurs</h3><p>Curiosité, rigueur, discipline, honnêteté, créativité et respect.</p><h3>Notre méthode</h3><p>Définir, expliquer, illustrer, pratiquer, corriger et approfondir.</p></div>
+</section>
+</main>
+<footer><strong>PRINCE MATH</strong><br>APPRENDRE • COMPRENDRE • PRATIQUER • RÉUSSIR<br><span class="small">La connaissance au service de l'avenir.</span></footer>
+<script>
+function showPage(id,btn){
+ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+ const target=document.getElementById(id); if(target) target.classList.add('active');
+ document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+ if(btn) btn.classList.add('active');
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+function check(inputId,answer,resultId){
+ const value=document.getElementById(inputId).value.trim().toLowerCase().replace(',','.');
+ const result=document.getElementById(resultId);
+ if(value===answer){result.textContent='Bonne réponse !';result.style.color='#18794e';}
+ else{result.textContent='Pas encore. Revois la leçon et réessaie.';result.style.color='#b42318';}
+}
+</script>
+</body>
+</html>
